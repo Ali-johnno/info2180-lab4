@@ -63,11 +63,22 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ], 
 ];
-
+$superheroArray = [];
+$s = $_REQUEST['s'];
+if (isset($_REQUEST['s'])){
+    if ($s !== ''){
+        foreach($superheroes as $superhero){
+            if (strcasecmp($s, $superhero['alias']) == 0 || strcasecmp($s, $superhero['name']) ==0){
+                $superheroArray = $superhero;
+            }
+        }
+        echo $superheroArray === []? json_encode("Superhero not found") : json_encode($superheroArray);
+    } else {
+        echo'<ul>';
+        foreach ($superheroes as $superhero){
+            echo '<li>'.$superhero['alias'].'</li>';
+        }
+        echo '</ul>';
+    }
+}
 ?>
-
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>

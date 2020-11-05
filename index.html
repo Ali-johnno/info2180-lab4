@@ -10,10 +10,24 @@
     </head>
     <body>
         <header>
-            <h1>Marvel Avengers Unite</h1>
+            <h1 id= "pageTitle">Marvel Avengers Unite</h1>
         </header>
         <main>
-            <button type="submit" class="btn">Search</button>
+            <form action="superheroes.php" method="post">
+                <p>Search by Full Name or Alias</p>
+                <input type = "text"  id ="searchBox" placeholder="e.g. Captain Rogers or Captain America">
+                <button type="submit" class="btn">Search</button>
+            </form>
+            <section>
+                <h1>RESULT</h1>
+                <hr>
+                <div id="result">
+                    <h3 id="alias"></h3>
+                    <h4 id="name"></h4>
+                    <p id="biography"></p>
+                    <p id= "notFound"></p>
+                </div>
+            </section>
         </main>
     </body>
 </html>
