@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
         superheroAlias.innerHTML = '';
         superheroName.innerHTML = '';
         superheroBio.innerHTML = '';
+        result.innerHTML = '';
 
         httpRequest.onreadystatechange = function(){
             if (httpRequest.readyState == 4){

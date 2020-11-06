@@ -64,7 +64,7 @@ $superheroes = [
   ], 
 ];
 $superheroArray = [];
-$s = $_REQUEST['s'];
+$s = filter_var($_REQUEST['s'], FILTER_SANITIZE_STRING,  FILTER_FLAG_NO_ENCODE_QUOTES);
 if (isset($_REQUEST['s'])){
     if ($s !== ''){
         foreach($superheroes as $superhero){
