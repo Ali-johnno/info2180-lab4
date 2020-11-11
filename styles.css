@@ -46,6 +46,10 @@ main{
     border-style: none;
 }
 
+.notFound{
+    color: red;
+}
+
 .btn{
     background-color: rgb(255, 0, 0);
     color: white;
